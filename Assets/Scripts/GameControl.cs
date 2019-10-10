@@ -34,7 +34,7 @@ public class GameControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lbwnb && ((ulong)lbwnbPlayer.frame >= lbwnbPlayer.frameCount))
+        if (lbwnb && lbwnbPlayer.frame > 0 && ((ulong)lbwnbPlayer.frame >= lbwnbPlayer.frameCount))
         {
             lbwnbPlayer.Stop();
             lbwnbImage.enabled = false;
@@ -57,7 +57,7 @@ public class GameControl : MonoBehaviour
                     lbwnbPlayer.Play();
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && !lbwnbImage.enabled)
             {
                 GameStart();
             }
