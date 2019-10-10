@@ -12,6 +12,7 @@ public class GameControl : MonoBehaviour
     public VideoPlayer player;
     public VideoPlayer lbwnbPlayer;
     public RawImage lbwnbImage;
+    public Image groupCodeImage;
     public Text scoreText;
     public Toggle singleMode;
     public Text startTip;
@@ -103,6 +104,7 @@ public class GameControl : MonoBehaviour
     {
         if (gameOver)
         {
+            groupCodeImage.enabled = false;
             startTip.enabled = false;
             generator.ClearAll();
             score = 50;
