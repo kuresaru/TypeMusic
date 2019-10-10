@@ -16,6 +16,7 @@ public class GameControl : MonoBehaviour
     public Toggle singleMode;
     public Text startTip;
 
+    public BlockGenerator generator;
     public bool gameOver = true;
     public bool lbwnb = false;
     public float scrollingSpeed = 300.0F;
@@ -29,6 +30,7 @@ public class GameControl : MonoBehaviour
     void Start()
     {
         lbwnbImage.enabled = false;
+        generator = GetComponent<BlockGenerator>();
     }
 
     // Update is called once per frame
@@ -70,8 +72,12 @@ public class GameControl : MonoBehaviour
                 if (currentBlock != null && Input.GetKeyDown(currentBlock.key))
                 {
                     Destroy(currentBlock.gameObject);
-                    currentBlock = null;
                     UpdateScore(1);
+                    if (currentBlock.last)
+                    {
+                        GameOver();
+                    }
+                    currentBlock = null;
                 }
                 else
                 {
@@ -98,13 +104,13 @@ public class GameControl : MonoBehaviour
         if (gameOver)
         {
             startTip.enabled = false;
-            BlockGenerator gen = GetComponent<BlockGenerator>();
-            gen.ClearAll();
+            generator.ClearAll();
             score = 50;
+            scoreText.text = score.ToString();
             player.Play();
             playTime = 0;
             gameOver = false;
-            gen.StartGen();
+            generator.StartGen();
         }
     }
 

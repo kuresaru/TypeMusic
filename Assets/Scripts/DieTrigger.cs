@@ -16,10 +16,15 @@ public class DieTrigger : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<TextBlock>() != null)
+        TextBlock block = collision.GetComponent<TextBlock>();
+        if (block != null)
         {
             Destroy(collision.gameObject);
             GameControl.instance.UpdateScore(-5);
+            if (block.last)
+            {
+                GameControl.instance.GameOver();
+            }
         }
     }
 

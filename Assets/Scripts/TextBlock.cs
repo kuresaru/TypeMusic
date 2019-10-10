@@ -5,6 +5,7 @@ using UnityEngine;
 public class TextBlock : MonoBehaviour {
 
     public KeyCode key;
+    public bool last = false;
 
 	// Use this for initialization
 	void Start () {

@@ -24,6 +24,10 @@ public class TargetTrigger : MonoBehaviour {
             {
                 Destroy(block.gameObject);
                 GameControl.instance.UpdateScore(1);
+                if (block.last)
+                {
+                    GameControl.instance.GameOver();
+                }
             }
         }
     }

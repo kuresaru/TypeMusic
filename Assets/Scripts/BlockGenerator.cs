@@ -44,18 +44,11 @@ public class BlockGenerator : MonoBehaviour
     {
         if (!GameControl.instance.gameOver)
         {
-            if (currentBlockIndex < BlockTable.start.Length - 1)
+            Gen();
+            currentBlockIndex++;
+            if (currentBlockIndex < BlockTable.start.Length)
             {
-                Gen();
-                currentBlockIndex++;
-                if (currentBlockIndex < BlockTable.start.Length)
-                {
-                    Invoke("Timer", BlockTable.start[currentBlockIndex]);
-                }
-                else
-                {
-                    GameControl.instance.GameOver();
-                }
+                Invoke("Timer", BlockTable.start[currentBlockIndex]);
             }
         }
     }
@@ -63,6 +56,15 @@ public class BlockGenerator : MonoBehaviour
     private void Gen()
     {
         GameObject gameObject = Instantiate(blockPrefab, new Vector2(genX, genY), Quaternion.identity);
-        objects.Add(gameObject);
+        TextBlock textBlock = gameObject.GetComponent<TextBlock>();
+        if (textBlock != null)
+        {
+            textBlock.last = currentBlockIndex + 1 == BlockTable.start.Length;
+            objects.Add(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
