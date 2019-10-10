@@ -113,6 +113,74 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &189555682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 189555683}
+  - component: {fileID: 189555684}
+  - component: {fileID: 189555685}
+  m_Layer: 5
+  m_Name: GroupCode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &189555683
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 189555682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1316770870}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 419.3, y: -118.5}
+  m_SizeDelta: {x: 245.17, y: 336.88}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &189555684
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 189555682}
+--- !u!114 &189555685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 189555682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 2cdb12fe9b40e8144924725888649de2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!1 &321454522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,6 +1103,7 @@ RectTransform:
   - {fileID: 1818951345}
   - {fileID: 1943260408}
   - {fileID: 1640601189}
+  - {fileID: 189555683}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1111,7 +1180,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u5DE5\u5177\u4E5F\u662F\u4E00\u79CD\u9B3C\u755C\u4E50\u5668 \u6211\u9B3C\u755C\u4E86\u6211\u7684DIY\u5DE5\u5177\nBilibili
-    \   av41762041"
+    \ av41762041       By \u66AE\u5149\u5C0F\u733Fwzt"
 --- !u!222 &1451832578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1215,9 +1284,11 @@ MonoBehaviour:
   player: {fileID: 723101556}
   lbwnbPlayer: {fileID: 354722944}
   lbwnbImage: {fileID: 1943260409}
+  groupCodeImage: {fileID: 189555685}
   scoreText: {fileID: 1274458750}
   singleMode: {fileID: 610394938}
   startTip: {fileID: 1818951346}
+  generator: {fileID: 0}
   gameOver: 1
   lbwnb: 0
   scrollingSpeed: 15
